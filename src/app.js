@@ -70,6 +70,10 @@ const checkLoggedIn = function(req, res, next) {
   }
 }
 
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'views/index.html'));
+// });
+
 
 // app.get('/', checkLoggedIn, async function (req, res) {
 //   // res.sendFile(path.join(__dirname,'index.html'))
@@ -110,7 +114,7 @@ app.get('/hone', function(req, res) {
   res.render('home')
 })
 
-app.get('/register', function(req, res) {
+app.get('/', function(req, res) {
   res.render('register')
 })
 
@@ -125,7 +129,7 @@ app.get('/register', function(req, res) {
 
 
 
-app.post('/register', async(req, res) => {
+app.post('/', async(req, res) => {
   const { username, password, confirmPassword } = req.body
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{6,}$/;
